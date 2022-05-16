@@ -6,6 +6,7 @@ Live preview for your Handlebars templates. Extension compiles Handlebars templa
 
 - Live prview for Handlebars templates. Preview updates as you type.
 - Support for fake data. Add file `yourtemplate.handlebars.json` to be a context of the template
+- Support mjml components
 
 ## Example
 

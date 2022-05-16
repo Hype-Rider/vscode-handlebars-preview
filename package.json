@@ -1,11 +1,11 @@
 {
   "name": "handlebars-preview",
-  "displayName": "Handlebars Preview",
-  "description": "Live preview for Handlebar templates",
-  "version": "1.0.0",
+  "displayName": "Handlebars Preview w/MJML",
+  "description": "Live preview for Handlebar templates that use MJML",
+  "version": "2.0.0",
   "publisher": "chaliy",
   "engines": {
-    "vscode": "^1.5.0"
+    "vscode": "^1.67.0"
   },
   "icon": "icon.png",
   "repository": {
@@ -28,31 +28,37 @@
   ],
   "main": "./out/src/extension",
   "contributes": {
-    "commands": [{
-      "command": "handlebarsPreview.preview",
-      "title": "Handlebars: Open Preview"
-    }],
-    "keybindings": [{
-      "command": "handlebarsPreview.preview",
-      "key": "ctrl+p h",
-      "when": "!terminalFocus"
-    }]
+    "commands": [
+      {
+        "command": "handlebarsPreview.preview",
+        "title": "Handlebars: Open Preview"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "handlebarsPreview.preview",
+        "key": "ctrl+p h",
+        "when": "!terminalFocus"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
     "compile": "copyfiles test/examples/*.* out/ && tsc -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
+    "@types/mjml": "^4.7.0",
     "@types/mocha": "^2.2.32",
     "@types/node": "^6.0.40",
     "copyfiles": "^1.2.0",
     "mocha": "^2.3.3",
-    "typescript": "^2.0.3",
-    "vscode": "^1.0.0"
+    "typescript": "^4.1.5",
+    "@types/vscode": "^1.67.0",
+    "@vscode/test-electron": "^2.1.3"
   },
   "dependencies": {
-    "handlebars": "^4.0.6"
+    "handlebars": "^4.7.7",
+    "mjml": "^4.12.0"
   }
 }
